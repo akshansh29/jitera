@@ -1,0 +1,183 @@
+$border-color: #e8e8e8;
+$icon-color: #595959;
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.circle-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h-center{
+    display: flex;
+    justify-content: center;
+}
+
+.v-center{
+    display: flex;
+    align-items: center;
+}
+
+.divider{
+    height: 1px;
+    background: $border-color;
+}
+
+.h-divider{
+    width: 1px;
+    height: 25px;
+    background: $border-color;
+}
+
+// app
+.user-container{
+    width: 1470px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// user component 
+.user-card{
+    border: solid 1px $border-color;
+    margin: 15px;
+    width: 262px;
+    height: 360px;
+    .image-container{
+        background-color: #f5f5f5;
+        padding: 20px 20px 0 20px;
+        img{
+            height: 150px;
+        }
+
+    }
+
+    .user-details{
+        padding: 25px 20px;
+        .name {
+            color: #262626;
+            font-weight: 500;
+            padding-bottom: 5px;
+        }
+        .other-details{
+            color: $icon-color;
+            padding-top: 5px;
+            .t-font{
+                font-size: 14px;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .action-container{
+        color: $icon-color;
+        .a-button{
+            width: 100%;
+            height: 45px;
+            .like-icon{
+                color: #ff0200;
+            }
+        }
+    }
+}
+
+// modal component 
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+
+    .modal-main {
+        color: $icon-color;
+        position:fixed;
+        background: white;
+        width: 220px;
+        padding: 20px;
+        height: auto;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .button-container{
+            button{
+                margin: 20px 10px;
+                width: 70px;
+                height: 35px;
+                background: #fff;
+                border: 1px solid $border-color;
+                color: $icon-color;
+
+                &:hover{
+                    background: rgb(31, 154, 211);
+                    color: #fff;
+                }
+            }
+
+            
+        }
+        .input-title{
+            margin: 10px 0 5px 0;
+            width: 50px;
+        }
+
+        .modal-title{
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 0 10px;
+        }
+        .input-container{
+            width: 100%;
+            input{
+                border: 1px solid $border-color;
+                height: 25px;
+                width: 100%;
+
+                &:focus{
+                    outline: none !important;
+                    border:1px solid rgb(31, 154, 211);
+                    box-shadow: 0 0 10px #719ECE;
+                }
+            }
+        }
+    }
+}
+  
+
+
+// media query 
+
+@media only screen and (max-width: 1500px) {
+    .user-container{
+        width: 1180px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .user-container{
+        width: 885px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .user-container{
+        width: 590px;
+    }
+}
+
+@media only screen and (max-width:590px) {
+    .user-card{
+        width: 100%;
+        margin: 15px 25px;
+    }
+}
+
