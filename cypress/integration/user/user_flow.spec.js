@@ -1,3 +1,9 @@
+// in this test performing all the possible action which are
+// checking user card
+// like 1st card
+// edit email and phone Number of last card 
+// delete last card 
+
 describe('user app flow ', () => {
     beforeEach(() => {
         cy.visit('http://localhost:3000/')
@@ -22,6 +28,7 @@ describe('user app flow ', () => {
         cy.get('#save').click();
         cy.get('.user-card').last().find('#email-sp').should('contain', email);
         cy.get('.user-card').last().find('#phone-sp').should('contain', phone);
+        cy.wait(5000);
     })
 
     it('delete user card', () => {
@@ -31,6 +38,7 @@ describe('user app flow ', () => {
                 cy.get('.user-card').last().find('#delete').click();
                 cy.get('.user-card').should('have.length', cardLength - 1);
             });
+        cy.wait(5000);
     })
 
 });
